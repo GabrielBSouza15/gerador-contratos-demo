@@ -4,6 +4,14 @@ Automação local em Python que seleciona um registro pelo ID de uma planilha e 
 
 A origem do projeto foi uma rotina de geração de contratos a partir de informações recebidas por Google Forms. A planilha deste repositório é uma representação didática desses dados, com uma única aba e quatro registros inteiramente fictícios. Não há conexão com formulários ou contas Google.
 
+## Prévia e fluxo
+
+![Detalhe da planilha demonstrativa com os IDs CT-001 a CT-004 e pessoas fictícias](docs/images/planilha-por-id.png)
+
+O usuário informa um ID → o programa seleciona uma linha da planilha → preenche o modelo escolhido → gera um novo documento Word.
+
+A imagem mostra as primeiras colunas da planilha pública. Os documentos preenchidos podem ser consultados em [exemplos](exemplos/); todo o conteúdo é fictício.
+
 ## O que o exemplo faz
 
 1. Pergunta o ID do registro, como `CT-001`.
@@ -60,3 +68,12 @@ Os contratos são ilustrativos e não constituem modelos jurídicos para contrat
 ```
 
 É possível reconstruir os modelos com `python criar_modelos.py`. Esse comando substitui somente os dois modelos demonstrativos em `modelos`; não é necessário executá-lo para gerar contratos.
+
+
+## Verificação automática
+
+O workflow executa os testes de seleção por ID, validação e geração de documentos, usando dados fictícios em Linux com Python 3.12. A execução ocorre em alterações de `main`, pull requests e acionamentos manuais. Consulte o resultado em [GitHub Actions](https://github.com/GabrielBSouza15/gerador-contratos-demo/actions/workflows/testes.yml).
+
+## Licença
+
+[MIT](LICENSE), para o conteúdo publicado neste repositório.
